@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import "./NavBar.css"
 import NavItem from "./NavItem"
 
-function NavBar(){
+const NavBar = () => {
     const [isOpen,setIsOpen] = useState(false)
 
     return(
@@ -10,7 +10,7 @@ function NavBar(){
             <div className='nav_logo'>
                 SC TEAM
             </div>
-            <div className={`nav_items ${isOpen && "open"}`}>
+            <div className={`nav_items ${isOpen && "open"}`} onClick={() => setIsOpen(!isOpen)}>
                 <NavItem nombre={"Mapa"} link={"/mapa"}></NavItem>
                 <NavItem nombre={"Personajes"} link={"/personajes"}></NavItem>
                 <NavItem nombre={"Sobre Nosotros"} link={"/sobreNosotros"}></NavItem>
